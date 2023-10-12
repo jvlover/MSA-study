@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SecondServiceController {
     @GetMapping("/welcome")
     public String welcome() {
-        return "Welcome to the First service.";
+        return "Welcome to the Second service.";
     }
 
     @GetMapping("/message")
