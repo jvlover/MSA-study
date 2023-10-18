@@ -4,8 +4,15 @@ server:
 spring:
   application:
     name: config-service
+  profiles:
+    active: native
   cloud:
     config:
       server:
+        native:
+          search-locations: file:///${user.home}/Desktop/msa/native-file-repo
         git:
-          uri: file:///Users/SSAFY/Desktop/msa/git-local-repo
+#          uri: file:///Users/SSAFY/Desktop/msa/git-local-repo
+          uri: https://github.com/jvlover/spring-cloud-config-test.git
+#          username: [your username]
+#          password: [your password]
