@@ -5,7 +5,6 @@ import com.example.userservice.dto.UserDto;
 import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.jpa.UserRepository;
 import com.example.userservice.vo.ResponseOrder;
-import feign.FeignException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -94,12 +93,13 @@ public class UserServiceImpl implements UserService {
 
         /* Using feign client */
         /* Feign exception handling */
-        List<ResponseOrder> orderList = null;
-        try {
-            orderList = orderServiceClient.getOrders(userId);
-        } catch (FeignException e) {
-            log.error(e.getMessage());
-        }
+//        List<ResponseOrder> orderList = null;
+//        try {
+//            orderList = orderServiceClient.getOrders(userId);
+//        } catch (FeignException e) {
+//            log.error(e.getMessage());
+//        }
+        List<ResponseOrder> orderList = orderServiceClient.getOrders(userId);
 
         userDto.setOrders(orderList);
 
